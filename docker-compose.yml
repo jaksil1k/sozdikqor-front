@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+#  mysql:
+#    image: mysql:8.1
+#    container_name: mysql
+#    restart: always
+#    platform: linux/amd64
+#    environment:
+#      MYSQL_ROOT_PASSWORD: "1234"
+#      MYSQL_DATABASE: test
+#      MYSQL_USER: kim
+#      MYSQL_PASSWORD: "1234"
+#    healthcheck:
+#      test:
+#        ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p1234"]
+#      interval: 30s
+#      timeout: 10s
+#      retries: 5
+#    volumes:
+#      - ./mysql-dump/sozdikqor.sql:/docker-entrypoint-initdb.d/sodikqor.sql
+#    ports:
+#      - 3306:3306
+
+  meilisearch:
+    container_name: meilisearch
+    image: getmeili/meilisearch:v1.8
+    environment:
+      - http_proxy
+      - https_proxy
+      - MEILI_MASTER_KEY=qkZLTo5YiMpAjBVY8JbMwq-LXDbN9isek5Hflwds3mk
+      # - MEILI_MASTER_KEY=${MEILI_MASTER_KEY:-masterKey}
+      - MEILI_NO_ANALYTICS=${MEILI_NO_ANALYTICS:-true}
+      - MEILI_ENV=${MEILI_ENV:-development}
+      - MEILI_LOG_LEVEL
+      - MEILI_DB_PATH=${MEILI_DB_PATH:-/data.ms}
+    ports:
+      - ${MEILI_PORT:-7700}:7700
+    volumes:
+      - ./data.ms:/data.ms
+    restart: unless-stopped
+#    depends_on:
+#      mysql:
+#        condition: service_healthy
+
+#  meilisync:
+#    image: long2ice/meilisync
+#    volumes:
+#      - ./config.yml:/meilisync/config.yml
+#    # restart: always
+#    depends_on:
+#      - meilisearch

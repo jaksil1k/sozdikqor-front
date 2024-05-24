@@ -1,0 +1,27 @@
+debug: true
+plugins:
+  - meilisync.plugin.Plugin
+progress:
+  type: file
+source:
+  type: mysql
+  host: localhost
+  port: 3306
+  user: root
+  password: "1234"
+  database: test
+meilisearch:
+  api_url: http://meilisearch:7700
+  api_key: qkZLTo5YiMpAjBVY8JbMwq-LXDbN9isek5Hflwds3mk
+  insert_size: 1000
+  insert_interval: 10
+sync:
+  - table: sq_items
+    index: sq_items
+    pk: id
+    plugins:
+      - meilisync.plugin.Plugin
+#    full: true
+# sentry:
+#   dsn: ""
+#   environment: "production"

@@ -1,0 +1,49 @@
+.search-options {
+    display: flex;
+    gap: .5rem;
+}
+
+.search-options__btn {
+    display: flex;
+    justify-content: center;
+
+    border-radius: 1.5rem;
+    border: 0;
+
+    gap: .625rem;
+    padding: 1rem 1.5rem;
+}
+
+.search-options__btn.blue {
+    background-color: rgba(76, 145, 208, .2);
+    color: rgba(76, 145, 208, 1);
+}
+.search-options__btn.red {
+    background-color: rgba(222, 101, 73, .2);
+    color: rgba(222, 101, 73, 1);
+}
+.search-options__btn.gray {
+    background-color: rgba(123, 126, 144, .2);
+    color: rgba(76, 82, 114, 1);
+}
+.search-options__btn.violet {
+    background-color: rgba(44, 46, 166, .2);
+    color: rgba(44, 46, 166, 1);
+}
+.search-options__btn.yellow {
+    background-color: rgba(236, 166, 8, .2);
+    color: rgba(236, 166, 8, 1);
+}
+
+.search-options__img {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+
+.search-options__btn-text {
+    font-size: 1rem;
+    font-weight: 600;
+
+    margin: .25rem 0;
+}

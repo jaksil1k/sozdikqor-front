@@ -1,0 +1,31 @@
+.nav {
+
+    display: flex;
+    flex-direction: row;
+    /*justify-content: space-between;*/
+    padding: 2rem 10rem;
+    background-color: #FFFFFF;
+
+}
+
+.nav__logo {
+    color: #00598D;
+    font-weight: 500;
+
+    font-size: 1.25rem;
+}
+
+.nav__list {
+    color: #7B7D8C;
+    opacity: .8;
+    display: flex;
+    gap: 1.5rem;
+
+    width: 100%;
+    justify-content: center;
+}
+
+.nav__link.active {
+    opacity: 1;
+    color: #4C91D0;
+}
